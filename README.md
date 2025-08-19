@@ -1,5 +1,5 @@
 # PDF Intelligence System - Adobe Hackathon 2025 Finale
-
+- Disclaimer: We have implemented for both role based query and document based query. Click on Query document tab on the home page to run query on document snippets
 ## 🎯 Project Overview
 
 A comprehensive PDF document intelligence system that enables users to upload multiple PDFs, discover semantic connections between documents, and generate AI-powered insights. Built for the Adobe India Hackathon 2025 Grand Finale, this system transforms how users interact with their document collections by providing intelligent cross-document analysis, contradiction detection, and personalized content generation.
