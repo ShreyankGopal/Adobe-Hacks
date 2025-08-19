@@ -78,7 +78,7 @@ AZURE_TTS_ENDPOINT=<azure_tts_endpoint>
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Aayush-Bhargav/Adobe-Hackathon.git
+   https://github.com/ShreyankGopal/Adobe-Hacks.git
    cd Adobe-Hacks
    cd finale
    ```
@@ -100,7 +100,7 @@ AZURE_TTS_ENDPOINT=<azure_tts_endpoint>
      -e AZURE_TTS_ENDPOINT=<TTS_ENDPOINT> \
      -p 8080:8080 -p 5001:5001 yourimageidentifier
    ```
-
+- The front end runs on port 8080 and backend on 5001. You can access the page through localhost:8080
 4. **Access the application**
    Open your browser and navigate to `http://localhost:8080`
 
