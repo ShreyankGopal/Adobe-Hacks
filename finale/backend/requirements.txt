@@ -1,0 +1,26 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# Core
+flask==2.3.3
+flask-cors==4.0.0
+werkzeug==2.3.7
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.5.1
+pymupdf==1.24.2
+joblib==1.4.2
+gtts==2.5.1
+nltk==3.9
+
+# LLM/TTS
+litellm==1.34.0
+openai>=1.40.0
+
+azure-cognitiveservices-speech==1.37.0
+google-cloud-texttospeech
+# Embeddings / Transformers (CPU wheels)
+sentence-transformers==2.6.1
+transformers==4.41.2
+torch==2.3.0+cpu
+google-generativeai
+pydub

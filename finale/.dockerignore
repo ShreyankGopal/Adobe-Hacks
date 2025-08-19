@@ -1,0 +1,13 @@
+backend/uploads
+backend/cached_model
+backend/CredPath.json
+backend/static
+backend/venv
+node_modules
+dist
+.env
+*.py
+*.db
+*.log
+backend/venv
+_pycache_/

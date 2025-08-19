@@ -1,0 +1,10 @@
+finale/backend/venv
+
+# Uploaded files
+finale/backend/uploads
+
+# Cached model data
+finale/backend/cached_model
+
+# Node dependencies
+finale/node_modules

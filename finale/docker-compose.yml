@@ -1,0 +1,61 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # This becomes VITE_ADOBE_CLIENT_ID at build-time
+        ADOBE_EMBED_API_KEY: ${ADOBE_EMBED_API_KEY}
+    image: finale-app:latest
+    ports:
+      - "8080:8080"
+    environment:
+      # Backend config (evaluators will set these)
+      LLM_PROVIDER: ${LLM_PROVIDER:-gemini}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-2.5-flash}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      TTS_PROVIDER: ${TTS_PROVIDER:-gcp} # or 'azure' during eval
+      AZURE_TTS_KEY: ${AZURE_TTS_KEY:-}
+      AZURE_TTS_ENDPOINT: ${AZURE_TTS_ENDPOINT:-}
+      # The backend will read this path
+      GOOGLE_APPLICATION_CREDENTIALS: /credentials/adbe-gcp.json
+      PORT: 8080
+    volumes:
+      # Mount your creds file read-only inside the container
+      - ./backend/CredPath.json:/credentials/adbe-gcp.json:ro
+      # Optional: persist uploads/cache between restarts
+      - ./backend/uploads:/app/uploads
+      - ./backend/cached_model:/app/cached_model
+    # Uncomment if you’re on Apple Silicon and they require amd64
+    # platform: linux/amd64services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # This becomes VITE_ADOBE_CLIENT_ID at build-time
+        ADOBE_EMBED_API_KEY: ${ADOBE_EMBED_API_KEY}
+    image: finale-app:latest
+    ports:
+      - "8080:8080"
+    environment:
+      # Backend config (evaluators will set these)
+      LLM_PROVIDER: ${LLM_PROVIDER:-gemini}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-2.5-flash}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      TTS_PROVIDER: ${TTS_PROVIDER:-gcp} # or 'azure' during eval
+      AZURE_TTS_KEY: ${AZURE_TTS_KEY:-}
+      AZURE_TTS_ENDPOINT: ${AZURE_TTS_ENDPOINT:-}
+      # The backend will read this path
+      GOOGLE_APPLICATION_CREDENTIALS: /credentials/adbe-gcp.json
+      PORT: 8080
+    volumes:
+      # Mount your creds file read-only inside the container
+      - ./backend/CredPath.json:/credentials/adbe-gcp.json:ro
+      # Optional: persist uploads/cache between restarts
+      - ./backend/uploads:/app/uploads
+      - ./backend/cached_model:/app/cached_model
+    # Uncomment if you’re on Apple Silicon and they require amd64
+    # platform: linux/amd64
